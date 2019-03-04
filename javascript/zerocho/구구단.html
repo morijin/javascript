@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>구구단 문제 만들기</title>
+    <style>
+    body{
+        white-space:pre-wrap
+    }
+    </style>
+</head>
+Math.random의 random은 random이 아니얌
+진짜 random에서는 쓰지말아요
+<body>
+<script>
+    out:
+    while(true){ // 무한한 반복
+        var a = Math.floor(Math.random() * 9) + 1;
+        var b = Math.floor(Math.random() * 9) + 1;
+        var result = a * b;
+        var 조건 = true;
+        while(true){
+            var answer = prompt(String(a) +'*'+ String(b)+ '=',);
+            if (result === Number(answer)) {
+                console.log('정답');
+                break;
+            }
+            if (answer === null){
+                console.log('탈출');
+                break out;
+            }
+            else {
+                console.log('땡');
+            }
+        }
+    }
+</script>
+</body>
+</html>
