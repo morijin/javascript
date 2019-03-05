@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue!!!</title>
+    <style>
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <h1>Vue 시작하기</h1>
+    <h2>선언적 렌더링</h2>
+    <div id="app">
+        {{ message }}
+    </div>
+    <br>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '안녕하세요 Vue!'
+            }
+        })
+    </script>
+    <div id="app-2">
+        <span v-bind:title="titMessage">
+            마우스를 올리면 동적으로 바인딩 된 title을 볼 수 있다!
+        </span>
+    </div>
+    <script>
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                titMessage: '동적바인딩!!'
+            }
+        })
+    </script>
+    <h2>조건문과 반복문</h2>
+    <div id="app-3">
+        <p v-if="seen">
+            볼수있다없다!?
+        </p>
+    </div>
+    <script>
+        var app3 = new Vue({
+            el: '#app-3',
+            data: {
+                seen: true
+            }
+        })
+        // app3.seen = false 
+        // DOM구조에서도 데이터를 바인딩 할수 있어요
+    </script>
+    <div id="app-4">
+        <ol>
+            <li v-for="a in b">{{ a.text }}</li>
+        </ol>
+    </div>
+    <script>
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                b: [
+                    {text: '그것은 무엇인가'},
+                    {text: '두번째는 무엇인가'}
+                ]
+            }
+        })
+        //app4.b.push({text:'세번째??'})
+    </script>
+</body>
+</html>
